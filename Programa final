@@ -1,0 +1,58 @@
+#Menu de apresentação
+
+print('-----------------Bem vindo(a) a sorveteria Lucas Aparecido da Costa Valle----------------------')
+print('-----------------------------------------\ Cardápio /------------------------------------------')
+print('| Código |      Descrição       | Tamanho P (500ml) | Tamanho M (1000ml) | Tamanho G (2000ml) |')
+print('|   TR   | Sabores tradicionais |      R$: 6,00     |      R$: 10,00     |      R$: 18,00     |')
+print('|   ES   |   Sabores especiais  |      R$: 7,00     |      R$: 12,00     |      R$: 21,00     |')
+print('|   PR   |    Sabores premium   |      R$: 8,00     |      R$: 14,00     |      R$: 24,00     |')
+print('|---------------------------------------------------------------------------------------------|')
+
+# Laço de repetição das escolhas
+
+acumulador = 0
+while True:
+    tamanho = input("Entre com o TAMANHO do pote desejado (P/M/G): ")
+    if (tamanho != 'p') and (tamanho != 'm') and (tamanho != 'g'):
+        print('Tamanho inválido!')
+        continue
+    codigo = input('Entre com o CÓDIGO desejado (TR/ES/PR) : ')
+    if (codigo != 'tr') and (codigo != 'es') and (codigo != 'pr'):
+        print('Código inválido')
+        continue
+    elif codigo == 'tr' and tamanho == 'p':
+        acumulador += 6
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    elif codigo == 'tr' and tamanho == 'm':
+        acumulador += 10
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    elif codigo == 'tr' and tamanho == 'g':
+        acumulador += 18
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    elif codigo == 'es' and tamanho == 'p':
+        acumulador += 7
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    elif codigo == 'es' and tamanho == 'm':
+        acumulador += 12
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    elif codigo == 'es' and tamanho == 'g':
+        acumulador += 21
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    elif codigo == 'pr' and tamanho == 'p':
+        acumulador += 8
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    elif codigo == 'pr' and tamanho == 'm':
+        acumulador += 14
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    elif codigo == 'pr' and tamanho == 'g':
+        acumulador += 24
+        print('O valor do pedido até agora é de R$:{:.2f} reais.'.format(acumulador))
+    saida = input('Mais alguma coisa? (S/N)')
+
+# Saída do programa
+
+    if saida == 'n':
+        print('O valor total é de R$:{:.2f} reais.'.format(acumulador))
+        break
+    elif saida == 's':
+        continue
